@@ -2,47 +2,96 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Trustworthy Healthcare AI: Interpretability and Ethics</title>
+    <title>Interpretable and Transparent AI for Healthcare Applications</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        /* Global Styles */
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
+            background-color: #f4f6f8;
             color: #333;
         }
+        a {
+            color: #0d6efd;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header */
         header {
             background-color: #0d6efd;
             color: white;
-            padding: 30px 20px;
+            padding: 40px 20px 20px 20px;
             text-align: center;
+            position: relative;
         }
+        header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+        header p {
+            margin: 5px 0;
+            font-size: 1.1em;
+        }
+
+        /* Logos */
+        .logos {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logos img {
+            height: 60px;
+            width: auto;
+        }
+
+        /* Sections */
         section {
-            padding: 30px 20px;
-            max-width: 1000px;
-            margin: auto;
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: 30px auto;
             background: white;
-            margin-bottom: 20px;
-            border-radius: 6px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
         h2 {
             color: #0d6efd;
-            border-bottom: 2px solid #e9ecef;
-            padding-bottom: 5px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            font-size: 1.6em;
         }
         ul {
             padding-left: 20px;
         }
+        .schedule li {
+            margin-bottom: 12px;
+        }
+
+        /* Footer */
         footer {
             text-align: center;
-            padding: 15px;
+            padding: 20px;
             background-color: #e9ecef;
-            font-size: 0.9em;
+            font-size: 0.95em;
         }
-        .schedule li {
-            margin-bottom: 8px;
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .logos {
+                flex-direction: column;
+                gap: 10px;
+            }
         }
     </style>
 </head>
@@ -50,7 +99,12 @@
 <body>
 
 <header>
-    <h1>Trustworthy AI in Healthcare: Transparency, Interpretability, and Ethics</h1>
+    <div class="logos">
+        <!-- Replace src with your actual logos -->
+        <img src="logo_univK.png" alt="University K Logo">
+        <img src="logo_ISMAI.png" alt="ISMAI Logo">
+    </div>
+    <h1>Interpretable and Transparent AI for Healthcare Applications</h1>
     <p>Explainable Artificial Intelligence Workshop</p>
     <p><strong>Date:</strong> 10 February 2026</p>
 </header>
@@ -59,15 +113,15 @@
     <h2>Workshop Description</h2>
     <p>
         This workshop focuses on <strong>Explainable Artificial Intelligence (XAI)</strong> for healthcare systems,
-        aiming to bridge the gap between advanced AI models and their reliable, trustworthy use in medical applications.
-        As AI-driven solutions increasingly support clinical decision-making, explainability becomes essential to ensure
-        transparency, fairness, robustness, and user trust.
+        aiming to bridge the gap between advanced AI models and their reliable, trustworthy deployment in medical applications.
+        As AI-driven solutions increasingly support clinical decision-making, explainability, transparency, and interpretability
+        are essential to ensure trust, fairness, and robustness.
     </p>
     <p>
-        The workshop introduces both <strong>global and local XAI approaches</strong>, with a particular emphasis on
-        interpreting models applied to <strong>tabular healthcare data</strong> (such as electronic health records and
-        clinical variables) and <strong>medical imaging data</strong>. Through a combination of theoretical presentations
-        and hands-on sessions, participants will explore state-of-the-art XAI techniques and real-world healthcare use cases.
+        Participants will explore both <strong>global and local XAI approaches</strong>, with applications to
+        <strong>tabular healthcare data</strong> (e.g., electronic health records and clinical variables) and
+        <strong>medical imaging data</strong>. Through lectures and hands-on sessions, they will learn to apply
+        interpretable and transparent AI methods to real-world healthcare systems.
     </p>
 </section>
 
@@ -75,10 +129,9 @@
     <h2>Workshop Program</h2>
     <ul class="schedule">
         <li><strong>08:30 – 09:00:</strong> Opening Remarks</li>
-        <li><strong>09:00 – 10:00:</strong> Introduction to XAI  
-            <br>Imen Jdey & Ilef Ben Slima</li>
+        <li><strong>09:00 – 10:00:</strong> Introduction to XAI<br>Imen Jdey & Ilef Ben Slima</li>
         <li><strong>10:00 – 10:30:</strong> Coffee Break</li>
-        <li><strong>10:30 – 12:30:</strong> Hands-on Practical Sessions on XAI
+        <li><strong>10:30 – 12:30:</strong> Hands-on Practical Sessions
             <ul>
                 <li><strong>Computer Vision:</strong> Walid Brahmi</li>
                 <li><strong>Tabular Data:</strong> Naoufel Maghraoui</li>
@@ -99,15 +152,16 @@
 <section>
     <h2>Technical Committee</h2>
     <ul>
-        <li>Dr. Sana Khamekhem : Application</li>
+        <li>Dr. Sana Khamekhem – Application</li>
         <li>Dr. Sonia Bouzidi – Applications</li>
         <li>Dr. Walid Brahmi – Applications</li>
         <li>Ph.D Adel Ben Ali</li>
         <li>Ph.D Monia Mahmoudi</li>
         <li>Ph.D Moez Hamdi</li>
-        <li> Ph.D Naoufel Maghraoui</li>
+        <li>Ph.D Naoufel Maghraoui</li>
     </ul>
 </section>
+
 <footer>
     <p>© 2026 XAI for Healthcare Systems Workshop</p>
 </footer>
