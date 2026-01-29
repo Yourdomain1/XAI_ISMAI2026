@@ -2,96 +2,174 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Interpretable and Transparent AI for Healthcare Applications</title>
+    <title>Interpretable and Transparent AI for Healthcare</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* Global Styles */
+        :root {
+            --primary: #1a1a1a;    /* Deep Charcoal */
+            --accent: #c5a059;     /* Muted Gold */
+            --bg: #fdfdfd;         /* Off White */
+            --text: #444;
+            --light-gray: #f8f9fa;
+        }
+
         body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.8;
             margin: 0;
             padding: 0;
-            background-color: #f4f6f8;
-            color: #333;
-        }
-        a {
-            color: #0d6efd;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
+            background-color: var(--bg);
+            color: var(--text);
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Header */
+        /* Elegant Header */
         header {
-            background-color: #0d6efd;
+            background-color: var(--primary);
             color: white;
-            padding: 40px 20px 20px 20px;
+            padding: 80px 20px 60px 20px;
             text-align: center;
-            position: relative;
-        }
-        header h1 {
-            font-size: 2em;
-            margin-bottom: 10px;
-            line-height: 1.2;
-        }
-        header p {
-            margin: 5px 0;
-            font-size: 1.1em;
+            border-bottom: 5px solid var(--accent);
         }
 
-        /* Logos */
         .logos {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            right: 20px;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 40px;
+            filter: brightness(0) invert(1); /* Makes logos white for dark background */
+            opacity: 0.9;
         }
+
         .logos img {
-            height: 60px;
+            height: 50px;
             width: auto;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8em;
+            letter-spacing: -0.02em;
+            margin: 0 auto 15px;
+            max-width: 900px;
+        }
+
+        header p {
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent);
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        header .date {
+            color: #fff;
+            margin-top: 15px;
+            letter-spacing: 1px;
+            font-weight: 400;
         }
 
         /* Sections */
         section {
-            padding: 40px 20px;
-            max-width: 900px;
-            margin: 30px auto;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            max-width: 850px;
+            margin: 60px auto;
+            padding: 0 30px;
         }
+
         h2 {
-            color: #0d6efd;
-            border-bottom: 2px solid #e0e0e0;
-            padding-bottom: 8px;
-            margin-bottom: 20px;
-            font-size: 1.6em;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8em;
+            color: var(--primary);
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
         }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+
+        p {
+            margin-bottom: 25px;
+            font-size: 1.05em;
+        }
+
+        strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Elegant List/Schedule */
         ul {
-            padding-left: 20px;
+            list-style: none;
+            padding: 0;
         }
+
+        li {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
         .schedule li {
-            margin-bottom: 12px;
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            align-items: baseline;
+        }
+
+        .schedule li strong {
+            color: var(--accent);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1em;
+        }
+
+        .nested-list {
+            grid-column: 2;
+            margin-top: 10px;
+        }
+
+        .nested-list li {
+            border: none;
+            padding: 5px 0;
+            font-size: 0.95em;
+        }
+
+        /* Grid for Committees */
+        .committee-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .committee-card {
+            background: var(--light-gray);
+            padding: 20px;
+            border-left: 3px solid var(--accent);
         }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 20px;
-            background-color: #e9ecef;
-            font-size: 0.95em;
+            padding: 60px 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.8em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #999;
         }
 
         /* Responsive */
-        @media (max-width: 600px) {
-            .logos {
-                flex-direction: column;
-                gap: 10px;
-            }
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.8em; }
+            .schedule li { grid-template-columns: 1fr; gap: 5px; }
+            .logos { gap: 20px; }
         }
     </style>
 </head>
@@ -100,70 +178,68 @@
 
 <header>
     <div class="logos">
-        <!-- Replace src with your actual logos -->
-        <img src="logo_univK.png" alt="University K Logo">
-        <img src="logo_ISMAI.png" alt="ISMAI Logo">
+        <img src="logo_univK.png" alt="University K">
+        <img src="logo_ISMAI.png" alt="ISMAI">
     </div>
     <h1>Interpretable and Transparent AI for Healthcare Applications</h1>
     <p>Explainable Artificial Intelligence Workshop</p>
-    <p><strong>Date:</strong> 10 February 2026</p>
+    <div class="date">10 February 2026</div>
 </header>
 
 <section>
     <h2>Workshop Description</h2>
     <p>
-        This workshop focuses on <strong>Explainable Artificial Intelligence (XAI)</strong> for healthcare systems,
-        aiming to bridge the gap between advanced AI models and their reliable, trustworthy deployment in medical applications.
-        As AI-driven solutions increasingly support clinical decision-making, explainability, transparency, and interpretability
-        are essential to ensure trust, fairness, and robustness.
+        This workshop focuses on <strong>Explainable Artificial Intelligence (XAI)</strong> for healthcare systems, 
+        bridging the gap between sophisticated algorithmic models and the clinical necessity for <strong>trust, fairness, and robustness</strong>. 
     </p>
     <p>
-        Participants will explore both <strong>global and local XAI approaches</strong>, with applications to
-        <strong>tabular healthcare data</strong> (e.g., electronic health records and clinical variables) and
-        <strong>medical imaging data</strong>. Through lectures and hands-on sessions, they will learn to apply
-        interpretable and transparent AI methods to real-world healthcare systems.
+        Guided by industry experts, participants will traverse the landscape of global and local XAI, applying these frameworks to complex <strong>medical imaging</strong> and <strong>tabular healthcare data</strong>.
     </p>
 </section>
 
 <section>
     <h2>Workshop Program</h2>
     <ul class="schedule">
-        <li><strong>08:30 – 09:00:</strong> Opening Remarks</li>
-        <li><strong>09:00 – 10:00:</strong> Introduction to XAI<br>Imen Jdey & Ilef Ben Slima</li>
-        <li><strong>10:00 – 10:30:</strong> Coffee Break</li>
-        <li><strong>10:30 – 12:30:</strong> Hands-on Practical Sessions
-            <ul>
-                <li><strong>Computer Vision:</strong> Walid Brahmi</li>
-                <li><strong>Tabular Data:</strong> Naoufel Maghraoui</li>
-            </ul>
+        <li><strong>08:30 – 09:00</strong> <span>Opening Remarks</span></li>
+        <li><strong>09:00 – 10:00</strong> <span>Introduction to XAI<br><small>Imen Jdey & Ilef Ben Slima</small></span></li>
+        <li><strong>10:00 – 10:30</strong> <span>Coffee Break</span></li>
+        <li>
+            <strong>10:30 – 12:30</strong> 
+            <div>
+                Practical Sessions
+                <ul class="nested-list">
+                    <li>• Computer Vision: <em>Walid Brahmi</em></li>
+                    <li>• Tabular Data: <em>Naoufel Maghraoui</em></li>
+                </ul>
+            </div>
         </li>
     </ul>
 </section>
 
 <section>
-    <h2>Organization Committee Chairs</h2>
-    <ul>
-        <li><strong>Imen Jdey</strong> – Local XAI, Computer Vision</li>
-        <li><strong>Ilef Ben Slima</strong> – Global XAI, Array Features</li>
-        <li><strong>Mohamed Ali Ayachi</strong></li>
-    </ul>
+    <h2>Organization Chairs</h2>
+    <div class="committee-grid">
+        <div class="committee-card"><strong>Imen Jdey</strong><br>Local XAI, Computer Vision</div>
+        <div class="committee-card"><strong>Ilef Ben Slima</strong><br>Global XAI, Array Features</div>
+        <div class="committee-card"><strong>Mohamed Ali Ayachi</strong><br>Administrative Chair</div>
+    </div>
 </section>
 
 <section>
     <h2>Technical Committee</h2>
-    <ul>
-        <li>Dr. Sana Khamekhem – Application</li>
-        <li>Dr. Sonia Bouzidi – Applications</li>
-        <li>Dr. Walid Brahmi – Applications</li>
-        <li>Ph.D Adel Ben Ali</li>
-        <li>Ph.D Monia Mahmoudi</li>
-        <li>Ph.D Moez Hamdi</li>
-        <li>Ph.D Naoufel Maghraoui</li>
-    </ul>
+    <div class="committee-grid" style="font-size: 0.9em;">
+        <div>Dr. Sana Khamekhem</div>
+        <div>Dr. Sonia Bouzidi</div>
+        <div>Dr. Walid Brahmi</div>
+        <div>Ph.D Adel Ben Ali</div>
+        <div>Ph.D Monia Mahmoudi</div>
+        <div>Ph.D Moez Hamdi</div>
+        <div>Ph.D Naoufel Maghraoui</div>
+    </div>
 </section>
 
 <footer>
-    <p>© 2026 XAI for Healthcare Systems Workshop</p>
+    &copy; 2026 XAI for Healthcare Systems • Excellence in Innovation
 </footer>
 
 </body>
